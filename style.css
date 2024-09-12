@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: Cornsilk;
+}
+
+.messenger {
+    width: 80%;
+    background: PaleGoldenrod;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.messages {
+    height: 600px;
+    overflow-y: scroll;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#messageInput {
+    width: calc(100% - 90px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#sendButton {
+    width: 80px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
