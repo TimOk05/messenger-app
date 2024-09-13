@@ -1,5 +1,6 @@
 // Получение элементов из DOM
 const sendButton = document.getElementById('sendButton');
+const clearButton = document.getElementById('clearButton');
 const messageInput = document.getElementById('messageInput');
 const messagesDiv = document.getElementById('messages');
 
@@ -8,6 +9,9 @@ const database = firebase.database();
 
 // Обработчик события для кнопки отправки
 sendButton.addEventListener('click', sendMessage);
+
+// Обработчик события для кнопки очистки сообщений
+clearButton.addEventListener('click', clearMessages);
 
 // Функция для отправки сообщения
 function sendMessage() {
@@ -29,6 +33,7 @@ function sendMessage() {
     }
 }
 
+// Функция для очистки всех сообщений
 function clearMessages() {
     const messagesRef = database.ref('messages');
 
@@ -43,7 +48,6 @@ function clearMessages() {
             console.error('Ошибка при удалении сообщений:', error);
         });
 }
-
 
 // Слушатель для новых сообщений
 const messagesRef = database.ref('messages');
