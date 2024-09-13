@@ -1,6 +1,7 @@
 /* Основные стили для всего документа */
 
 body {
+    /* Удалите overflow: hidden; и любые другие ограничения на высоту */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffcccc;
     color: #333;
@@ -11,7 +12,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    /* Удалите overflow: hidden; */
 }
 
 
@@ -20,23 +20,22 @@ body {
 .messenger {
     background-color: #ff4d4d;
     width: 100%;
-    height: 100vh;
-    /* Полная высота экрана */
+    min-height: 100vh;
+    /* Используем min-height, чтобы разрешить увеличение высоты при добавлении новых сообщений */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+    justify-content: flex-start;
+    /* Ставим flex-start, чтобы сообщения добавлялись снизу */
+    position: relative;
     overflow-y: auto;
-    /* Разрешаем вертикальную прокрутку для всего контейнера */
+    /* Разрешаем вертикальную прокрутку главного контейнера */
 }
 
 
 /* Стили для области сообщений */
 
 #messages {
+    /* Уберите ограничения на высоту и другие свойства, которые сжимают сообщения */
     flex: 1;
     overflow-y: auto;
     padding: 30px;
