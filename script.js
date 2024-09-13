@@ -66,8 +66,15 @@ function displayMessage(message) {
     adjustMessageHeight(messageElement);
 
     // Прокрутка к последнему сообщению
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Добавьте эту строку для автоматической прокрутки вниз
 }
+
+messagesDiv.addEventListener('scroll', () => {
+    if (messagesDiv.scrollTop === 0) {
+        console.log('Пользователь прокручивает вверх');
+        // Здесь можно загрузить более старые сообщения, если необходимо
+    }
+});
 
 // Функция для динамической установки высоты сообщений
 function adjustMessageHeight(messageElement) {
