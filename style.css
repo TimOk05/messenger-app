@@ -8,9 +8,14 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* Для растягивания контента по вертикали */
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
+    /* Минимальная высота экрана */
+    overflow: hidden;
+    /* Скрываем прокрутку страницы */
 }
 
 
@@ -18,31 +23,38 @@ body {
 
 .messenger {
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    margin: 10px;
+    border-radius: 12px 12px 0 0;
+    /* Закругляем только верхние углы */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    /* Скрываем горизонтальную прокрутку */
 }
 
 
 /* Стили для области сообщений */
 
 #messages {
-    height: 300px;
+    flex: 1;
+    /* Сообщения занимают всё доступное пространство */
     overflow-y: auto;
-    border: 1px solid #ffc0cb;
-    /* Светло-розовая граница */
-    border-radius: 8px;
+    border: none;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background-color: #fffaf0;
     /* Светло-кремовый фон */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Сообщения располагаются снизу */
 }
 
 
@@ -90,7 +102,7 @@ input[type="text"] {
 }
 
 
-/* Стили для кнопок отправки и очистки сообщений */
+/* Стили кнопок отправки и очистки */
 
 button {
     background-color: #ff69b4;
@@ -129,13 +141,18 @@ button:hover {
 
 @media (max-width: 480px) {
     .messenger {
-        width: 95%;
-        padding: 15px;
+        width: 100%;
+        height: 100vh;
+        /* Растягиваем на всю высоту экрана */
+        border-radius: 0;
+        /* Убираем закругление для мобильных */
     }
     #messages {
-        height: 250px;
+        height: calc(100vh - 100px);
+        /* Высота с учетом высоты элементов ввода */
     }
-    input[type="text"] {
+    input[type="text"],
+    button {
         font-size: 14px;
         padding: 10px;
     }
