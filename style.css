@@ -50,7 +50,7 @@ body {
 /* Сообщения в чате */
 
 #messages div {
-    background-color: #b30000;
+    background-color: blue;
     color: #fff;
     padding: 24px;
     border-radius: 20px;

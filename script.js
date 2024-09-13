@@ -69,15 +69,6 @@ function displayMessage(message) {
     scrollToBottom();
 }
 
-// Функция для прокрутки до последнего сообщения
-function scrollToBottom() {
-    const messengerContainer = document.querySelector('.messenger'); // Обращение к главному контейнеру
-    messengerContainer.scrollTop = messengerContainer.scrollHeight; // Прокрутка до самого низа
-}
-
-// Удалите любые избыточные функции, которые не нужны после этого изменения
-
-
 // Функция для динамической установки высоты сообщений
 function adjustMessageHeight(messageElement) {
     // Сброс высоты перед расчетом
@@ -93,4 +84,10 @@ function adjustMessageHeight(messageElement) {
     } else {
         messageElement.style.height = 'auto'; // Устанавливаем автоматическую высоту для коротких сообщений
     }
+}
+
+// Функция для прокрутки до последнего сообщения
+function scrollToBottom() {
+    const messengerContainer = document.querySelector('.messenger'); // Обращение к главному контейнеру
+    messengerContainer.scrollTop = messengerContainer.scrollHeight; // Прокрутка до самого низа
 }
