@@ -3,7 +3,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffcccc;
-    /* Яркий красный фон */
     color: #333;
     margin: 0;
     padding: 0;
@@ -12,9 +11,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    /* Полная высота экрана */
-    overflow: hidden;
-    /* Скрываем прокрутку страницы */
+    /* Удалите overflow: hidden; */
 }
 
 
@@ -22,19 +19,18 @@ body {
 
 .messenger {
     background-color: #ff4d4d;
-    /* Яркий красный цвет */
     width: 100%;
     height: 100vh;
-    /* Растягиваем на всю высоту экрана */
+    /* Полная высота экрана */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Держим элементы внизу */
     position: fixed;
     bottom: 0;
     left: 0;
     box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    overflow-y: auto;
+    /* Разрешаем вертикальную прокрутку для всего контейнера */
 }
 
 
