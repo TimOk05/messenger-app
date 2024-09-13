@@ -7,7 +7,7 @@ import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/fi
 const firebaseConfig = {
     apiKey: "AIzaSyB1xIUlDnaEWzeemgECA2t7j056LOYLlB0",
     authDomain: "lvyou-f2c15.firebaseapp.com",
-    databaseURL: "https://lvyou-f2c15-default-rtdb.firebaseio.com", // Добавлен databaseURL
+    databaseURL: "https://lvyou-f2c15-default-rtdb.firebaseio.com",
     projectId: "lvyou-f2c15",
     storageBucket: "lvyou-f2c15.appspot.com",
     messagingSenderId: "725995365672",
