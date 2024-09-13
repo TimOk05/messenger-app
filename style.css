@@ -74,15 +74,13 @@ body {
     margin-bottom: 20px;
     /* Оптимизированный отступ между сообщениями */
     max-width: 80%;
-    word-wrap: break-word;
-    /* Предотвращаем перенос одной буквы */
+    overflow-wrap: break-word;
+    /* Разрывает длинные слова */
+    white-space: normal;
+    /* Устанавливает нормальное поведение переноса текста */
     align-self: flex-start;
     font-size: 48px;
     /* Размер шрифта сообщений */
-    overflow-wrap: break-word;
-    /* Разрывает длинные слова */
-    white-space: pre-wrap;
-    /* Сохраняет пробелы и переносы строк */
 }
 
 
@@ -94,8 +92,8 @@ body {
     align-self: flex-end;
     overflow-wrap: break-word;
     /* Разрывает длинные слова */
-    white-space: pre-wrap;
-    /* Сохраняет пробелы и переносы строк */
+    white-space: normal;
+    /* Устанавливает нормальное поведение переноса текста */
 }
 
 
