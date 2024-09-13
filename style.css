@@ -30,13 +30,10 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     /* Держим элементы внизу */
-    border-radius: 0;
-    /* Убираем закругление */
     position: fixed;
     bottom: 0;
     left: 0;
     box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
-    /* Немного увеличены тени */
     overflow: hidden;
 }
 
@@ -45,19 +42,13 @@ body {
 
 #messages {
     flex: 1;
-    /* Сообщения занимают всё доступное пространство */
     overflow-y: auto;
     padding: 30px;
-    /* Оптимизированный padding */
     background-color: #f2f2f2;
-    /* Светло-серый фон для контраста */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     font-size: 48px;
-    /* Размер шрифта сообщений */
-    word-break: normal;
-    /* Сброс на нормальное поведение разрыва */
 }
 
 
@@ -65,24 +56,14 @@ body {
 
 #messages div {
     background-color: #b30000;
-    /* Бордовый фон для сообщений */
     color: #fff;
     padding: 24px;
-    /* Оптимизированный padding */
     border-radius: 20px;
-    /* Уменьшенный радиус закругления */
     margin-bottom: 20px;
-    /* Оптимизированный отступ между сообщениями */
     max-width: 80%;
-    overflow-wrap: break-word;
-    /* Разрывает длинные слова */
-    white-space: pre-line;
-    /* Сохраняет переносы строк, но удаляет лишние пробелы */
     align-self: flex-start;
     font-size: 48px;
-    /* Размер шрифта сообщений */
-    line-height: 1.2;
-    /* Оптимизация высоты строк */
+    overflow-wrap: break-word;
 }
 
 
@@ -90,12 +71,8 @@ body {
 
 #messages div.your-message {
     background-color: #cc0000;
-    /* Ярко-красный фон для сообщений пользователя */
     align-self: flex-end;
     overflow-wrap: break-word;
-    /* Разрывает длинные слова */
-    white-space: pre-line;
-    /* Сохраняет переносы строк, но удаляет лишние пробелы */
 }
 
 
@@ -106,11 +83,8 @@ body {
     flex-direction: column;
     width: 100%;
     padding: 20px;
-    /* Оптимизированный padding */
     background-color: #ff4d4d;
-    /* Яркий красный цвет */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    /* Увеличены тени */
 }
 
 
@@ -118,15 +92,10 @@ body {
 
 input[type="text"] {
     padding: 30px;
-    /* Оптимизированный padding */
     font-size: 42px;
-    /* Размер шрифта */
     margin-bottom: 20px;
-    /* Оптимизированный отступ */
     border: 2px solid #b30000;
-    /* Бордовая граница */
     border-radius: 12px;
-    /* Оптимизированный радиус закругления */
     outline: none;
     width: calc(100% - 50px);
     box-sizing: border-box;
@@ -137,37 +106,25 @@ input[type="text"] {
 
 button {
     background-color: #b30000;
-    /* Бордовый цвет кнопок */
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 30px;
-    /* Оптимизированный padding */
     font-size: 42px;
-    /* Размер шрифта кнопок */
     margin: 10px 0;
-    /* Оптимизированный отступ */
     border-radius: 12px;
-    /* Оптимизированный радиус закругления */
     width: 100%;
-    /* Кнопки занимают всю ширину */
 }
 
 button:hover {
     background-color: #cc0000;
-    /* Ярко-красный при наведении */
 }
-
-
-/* Специальные стили для кнопки очистки сообщений */
 
 #clearButton {
     background-color: #ff1a1a;
-    /* Красный цвет для кнопки очистки */
 }
 
 #clearButton:hover {
     background-color: #ff4d4d;
-    /* Яркий красный при наведении */
 }

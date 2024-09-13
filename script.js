@@ -62,6 +62,15 @@ function displayMessage(message) {
     messageElement.textContent = message.text;
     messagesDiv.appendChild(messageElement);
 
+    // Установка ширины сообщения
+    adjustMessageWidth(messageElement);
+
     // Прокрутка к последнему сообщению
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+// Функция для динамической установки ширины сообщений
+function adjustMessageWidth(messageElement) {
+    const containerWidth = messagesDiv.clientWidth; // Ширина контейнера сообщений
+    messageElement.style.maxWidth = `${containerWidth * 0.8}px`; // Ширина сообщения — 80% от контейнера
 }
