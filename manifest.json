@@ -1,6 +1,6 @@
 {
-    "name": "Романтичный Чат",
-    "short_name": "Чат",
+    "name": "LVyou",
+    "short_name": "MyLove",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffe4e1",
