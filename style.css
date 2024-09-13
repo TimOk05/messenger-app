@@ -34,8 +34,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    box-shadow: 0 -12px 24px rgba(0, 0, 0, 0.1);
-    /* Увеличены тени */
+    box-shadow: 0 -8.4px 16.8px rgba(0, 0, 0, 0.1);
+    /* Уменьшены тени */
     overflow: hidden;
 }
 
@@ -46,15 +46,15 @@ body {
     flex: 1;
     /* Сообщения занимают всё доступное пространство */
     overflow-y: auto;
-    padding: 45px;
-    /* Увеличен padding */
+    padding: 31.5px;
+    /* Уменьшен padding */
     background-color: #fffaf0;
     /* Светло-кремовый фон */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    font-size: 72px;
-    /* Увеличен шрифт сообщений */
+    font-size: 50.4px;
+    /* Уменьшен шрифт сообщений */
 }
 
 
@@ -64,17 +64,17 @@ body {
     background-color: #ffc0cb;
     /* Светло-розовый фон для сообщений */
     color: #333;
-    padding: 36px;
-    /* Увеличен padding */
-    border-radius: 30px;
-    /* Увеличен радиус закругления */
-    margin-bottom: 30px;
-    /* Увеличен отступ между сообщениями */
+    padding: 25.2px;
+    /* Уменьшен padding */
+    border-radius: 21px;
+    /* Уменьшен радиус закругления */
+    margin-bottom: 21px;
+    /* Уменьшен отступ между сообщениями */
     max-width: 80%;
     word-wrap: break-word;
     align-self: flex-start;
-    font-size: 72px;
-    /* Увеличен шрифт сообщений */
+    font-size: 50.4px;
+    /* Уменьшен шрифт сообщений */
 }
 
 
@@ -93,29 +93,29 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 30px;
-    /* Увеличен padding */
+    padding: 21px;
+    /* Уменьшен padding */
     background-color: #ffffff;
-    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.1);
-    /* Увеличены тени */
+    box-shadow: 0 -4.2px 8.4px rgba(0, 0, 0, 0.1);
+    /* Уменьшены тени */
 }
 
 
 /* Поле ввода */
 
 input[type="text"] {
-    padding: 48px;
-    /* Увеличен padding */
-    font-size: 60px;
-    /* Увеличен шрифт */
-    margin-bottom: 30px;
-    /* Увеличен отступ */
-    border: 3px solid #ffc0cb;
-    /* Увеличена толщина границы */
-    border-radius: 18px;
-    /* Увеличен радиус закругления */
+    padding: 33.6px;
+    /* Уменьшен padding */
+    font-size: 42px;
+    /* Уменьшен шрифт */
+    margin-bottom: 21px;
+    /* Уменьшен отступ */
+    border: 2.1px solid #ffc0cb;
+    /* Уменьшена толщина границы */
+    border-radius: 12.6px;
+    /* Уменьшен радиус закругления */
     outline: none;
-    width: calc(100% - 72px);
+    width: calc(100% - 50.4px);
     box-sizing: border-box;
 }
 
@@ -128,14 +128,14 @@ button {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 48px;
-    /* Увеличен padding */
-    font-size: 60px;
-    /* Увеличен шрифт кнопок */
-    margin: 15px 0;
-    /* Увеличен отступ */
-    border-radius: 18px;
-    /* Увеличен радиус закругления */
+    padding: 33.6px;
+    /* Уменьшен padding */
+    font-size: 42px;
+    /* Уменьшен шрифт кнопок */
+    margin: 10.5px 0;
+    /* Уменьшен отступ */
+    border-radius: 12.6px;
+    /* Уменьшен радиус закругления */
     width: 100%;
     /* Кнопки занимают всю ширину */
 }
