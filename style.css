@@ -56,8 +56,8 @@ body {
     justify-content: flex-end;
     font-size: 48px;
     /* Размер шрифта сообщений */
-    word-break: break-word;
-    /* Предотвращаем перенос одной буквы */
+    word-break: normal;
+    /* Сброс на нормальное поведение разрыва */
 }
 
 
@@ -76,11 +76,13 @@ body {
     max-width: 80%;
     overflow-wrap: break-word;
     /* Разрывает длинные слова */
-    white-space: normal;
-    /* Устанавливает нормальное поведение переноса текста */
+    white-space: pre-line;
+    /* Сохраняет переносы строк, но удаляет лишние пробелы */
     align-self: flex-start;
     font-size: 48px;
     /* Размер шрифта сообщений */
+    line-height: 1.2;
+    /* Оптимизация высоты строк */
 }
 
 
@@ -92,8 +94,8 @@ body {
     align-self: flex-end;
     overflow-wrap: break-word;
     /* Разрывает длинные слова */
-    white-space: normal;
-    /* Устанавливает нормальное поведение переноса текста */
+    white-space: pre-line;
+    /* Сохраняет переносы строк, но удаляет лишние пробелы */
 }
 
 
