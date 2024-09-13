@@ -90,20 +90,38 @@ input[type="text"] {
 }
 
 
-/* Стили кнопки */
+/* Стили для кнопок отправки и очистки сообщений */
 
 button {
     background-color: #ff69b4;
-    /* Яркий розовый фон для кнопки */
+    /* Яркий розовый фон для кнопок */
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    padding: 12px;
+    font-size: 16px;
+    margin: 5px 0;
+    border-radius: 6px;
+    /* Закругленные углы */
 }
 
 button:hover {
     background-color: #ff1493;
     /* Более темный розовый при наведении */
+}
+
+
+/* Специальные стили для кнопки очистки сообщений */
+
+#clearButton {
+    background-color: #ffa07a;
+    /* Светло-оранжевый фон для кнопки очистки */
+}
+
+#clearButton:hover {
+    background-color: #ff4500;
+    /* Более темный оранжевый при наведении */
 }
 
 

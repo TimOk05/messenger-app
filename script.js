@@ -29,6 +29,22 @@ function sendMessage() {
     }
 }
 
+function clearMessages() {
+    const messagesRef = database.ref('messages');
+
+    // Удаление всех сообщений из базы данных
+    messagesRef.remove()
+        .then(() => {
+            // Очистка сообщений из DOM
+            messagesDiv.innerHTML = '';
+            console.log('Все сообщения успешно удалены.');
+        })
+        .catch((error) => {
+            console.error('Ошибка при удалении сообщений:', error);
+        });
+}
+
+
 // Слушатель для новых сообщений
 const messagesRef = database.ref('messages');
 messagesRef.on('child_added', (data) => {
