@@ -1,34 +1,15 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
-import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyB1xIUlDnaEWzeemgECA2t7j056LOYLlB0",
-    authDomain: "lvyou-f2c15.firebaseapp.com",
-    databaseURL: "https://lvyou-f2c15-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "lvyou-f2c15",
-    storageBucket: "lvyou-f2c15.appspot.com",
-    messagingSenderId: "725995365672",
-    appId: "1:725995365672:web:5443e74c8711992f8a5c1d",
-    measurementId: "G-H06MK3MMFW"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const database = getDatabase(app);
-
-// Get elements from the DOM
+// Получение элементов из DOM
 const sendButton = document.getElementById('sendButton');
 const messageInput = document.getElementById('messageInput');
 const messagesDiv = document.getElementById('messages');
 
-// Event listener for the send button
+// Получение ссылки на базу данных Firebase
+const database = firebase.database();
+
+// Обработчик события для кнопки отправки
 sendButton.addEventListener('click', sendMessage);
 
-// Function to send a message
+// Функция для отправки сообщения
 function sendMessage() {
     const messageText = messageInput.value;
 
@@ -38,29 +19,29 @@ function sendMessage() {
             timestamp: Date.now()
         };
 
-        // Reference to the messages collection in the database
-        const messagesRef = ref(database, 'messages');
-        // Push the message to the database
-        push(messagesRef, message);
+        // Ссылка на коллекцию сообщений в базе данных
+        const messagesRef = database.ref('messages');
+        // Отправка сообщения в базу данных
+        messagesRef.push(message);
 
-        // Clear the input field
+        // Очистка поля ввода
         messageInput.value = '';
     }
 }
 
-// Listener for new messages
-const messagesRef = ref(database, 'messages');
-onChildAdded(messagesRef, (data) => {
+// Слушатель для новых сообщений
+const messagesRef = database.ref('messages');
+messagesRef.on('child_added', (data) => {
     const message = data.val();
     displayMessage(message);
 });
 
-// Function to display a message on the page
+// Функция для отображения сообщения на странице
 function displayMessage(message) {
     const messageElement = document.createElement('div');
     messageElement.textContent = message.text;
     messagesDiv.appendChild(messageElement);
 
-    // Scroll to the bottom of the messages div
+    // Прокрутка к последнему сообщению
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }

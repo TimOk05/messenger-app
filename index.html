@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Простой Мессенджер</title>
-    <!-- Подключите ваш CSS и другие элементы head здесь -->
 </head>
 
 <body>
@@ -14,8 +13,17 @@
         <button id="sendButton">Отправить</button>
     </div>
 
-    <!-- Подключение script.js как модуля -->
-    <script type="module" src="script.js"></script>
+    <!-- Подключение Firebase SDKs из CDN с использованием defer -->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- Скрипт инициализации Firebase -->
+    <script defer src="./init-firebase.js"></script>
+
+    <!-- Скрипт с логикой приложения -->
+    <script defer src="script.js"></script>
 </body>
 
 </html>
