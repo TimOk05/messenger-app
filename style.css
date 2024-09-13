@@ -11,8 +11,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
-    /* Минимальная высота экрана */
+    height: 100vh;
+    /* Полная высота экрана */
     overflow: hidden;
     /* Скрываем прокрутку страницы */
 }
@@ -27,7 +27,8 @@ body {
     /* Растягиваем на всю высоту экрана */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    /* Держим элементы внизу */
     border-radius: 0;
     /* Убираем закругление */
     position: fixed;
@@ -44,13 +45,14 @@ body {
     flex: 1;
     /* Сообщения занимают всё доступное пространство */
     overflow-y: auto;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px;
     background-color: #fffaf0;
     /* Светло-кремовый фон */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    font-size: 24px;
+    /* Значительно увеличиваем шрифт */
 }
 
 
@@ -60,14 +62,14 @@ body {
     background-color: #ffc0cb;
     /* Светло-розовый фон для сообщений */
     color: #333;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     max-width: 80%;
     word-wrap: break-word;
     align-self: flex-start;
-    font-size: 16px;
-    /* Увеличиваем шрифт для мобильных устройств */
+    font-size: 24px;
+    /* Увеличиваем шрифт сообщений */
 }
 
 
@@ -80,27 +82,34 @@ body {
 }
 
 
-/* Поле ввода и кнопки */
+/* Фиксированная панель ввода внизу экрана */
 
-input[type="text"],
-button {
-    padding: 14px;
-    font-size: 18px;
-    /* Увеличиваем шрифт для мобильных устройств */
-    margin: 5px 0;
+.input-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Поле ввода */
+
+input[type="text"] {
+    padding: 16px;
+    font-size: 20px;
+    /* Увеличиваем шрифт поля ввода */
+    margin-bottom: 10px;
     border: 1px solid #ffc0cb;
     border-radius: 6px;
     outline: none;
+    width: calc(100% - 24px);
     box-sizing: border-box;
 }
 
-input[type="text"] {
-    width: calc(100% - 24px);
-    margin-bottom: 10px;
-}
 
-
-/* Стили кнопок отправки и очистки */
+/* Стили кнопок */
 
 button {
     background-color: #ff69b4;
@@ -108,10 +117,13 @@ button {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 14px;
-    font-size: 18px;
+    padding: 16px;
+    font-size: 20px;
+    /* Увеличиваем шрифт кнопок */
     margin: 5px 0;
     border-radius: 6px;
+    width: 100%;
+    /* Кнопки занимают всю ширину */
 }
 
 button:hover {
