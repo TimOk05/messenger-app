@@ -100,7 +100,7 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: #b30000;
+    background-color: blue;
     color: #fff;
     border: none;
     cursor: pointer;
