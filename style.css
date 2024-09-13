@@ -79,6 +79,10 @@ body {
     align-self: flex-start;
     font-size: 48px;
     /* Размер шрифта сообщений */
+    overflow-wrap: break-word;
+    /* Разрывает длинные слова */
+    white-space: pre-wrap;
+    /* Сохраняет пробелы и переносы строк */
 }
 
 
@@ -88,6 +92,10 @@ body {
     background-color: #cc0000;
     /* Ярко-красный фон для сообщений пользователя */
     align-self: flex-end;
+    overflow-wrap: break-word;
+    /* Разрывает длинные слова */
+    white-space: pre-wrap;
+    /* Сохраняет пробелы и переносы строк */
 }
 
 
