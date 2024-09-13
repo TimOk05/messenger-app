@@ -12,3 +12,12 @@ var firebaseConfig = {
 
 // Инициализация Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Если используете Firebase Authentication, настройте локальное хранилище
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+        console.log("Firebase Auth persistence set to LOCAL storage.");
+    })
+    .catch((error) => {
+        console.error("Ошибка установки хранения сеанса:", error);
+    });
