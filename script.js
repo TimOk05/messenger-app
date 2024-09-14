@@ -60,13 +60,13 @@ messagesRef.on('child_added', (data) => {
 function displayMessage(message) {
     const messageElement = document.createElement('div');
     messageElement.textContent = message.text;
-    messagesDiv.insertBefore(messageElement, messagesDiv.firstChild); // Добавляем новое сообщение в начало
+    messagesDiv.appendChild(messageElement); // Добавляем новое сообщение в конец
 
-    // Прокрутка к нижнему краю области сообщений
-    scrollToTop();
+    // Прокрутка к последнему сообщению
+    scrollToBottom();
 }
 
-// Функция для прокрутки до нижнего края
-function scrollToTop() {
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Прокрутка до самого верха
+// Функция для прокрутки до последнего сообщения
+function scrollToBottom() {
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Прокрутка до самого низа
 }

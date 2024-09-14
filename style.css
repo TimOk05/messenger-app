@@ -6,13 +6,12 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     height: 100vh;
     /* Высота на весь экран */
     overflow: hidden;
+    /* Скрыть прокрутку страницы */
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -21,33 +20,31 @@ body {
 .messenger {
     background-color: #ff4d4d;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     /* Высота на весь экран */
     display: flex;
-    flex-direction: column-reverse;
-    /* Изменяем направление flex, чтобы новые сообщения были снизу */
-    justify-content: flex-start;
-    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Сообщения добавляются снизу */
     overflow: hidden;
+    position: relative;
 }
 
 
 /* Стили для области сообщений */
 
 #messages {
+    flex: 1;
+    /* Позволяет области сообщений растягиваться */
     padding: 10px 15px;
-    /* Немного уменьшим отступы */
     background-color: #f2f2f2;
     display: flex;
-    flex-direction: column-reverse;
-    /* Изменяем направление flex для отображения новых сообщений снизу */
-    justify-content: flex-start;
-    font-size: 48px;
+    flex-direction: column;
+    /* Сообщения добавляются снизу */
     overflow-y: auto;
-    flex-grow: 1;
-    /* Позволяет области сообщений растягиваться */
-    margin-top: 100px;
-    /* Отступ для панели ввода */
+    /* Разрешить вертикальную прокрутку */
+    font-size: 36px;
+    /* Оптимальный размер шрифта */
 }
 
 
@@ -61,9 +58,8 @@ body {
     margin-bottom: 10px;
     max-width: 80%;
     align-self: flex-start;
-    font-size: 36px;
-    /* Снизим размер шрифта для лучшего размещения */
     overflow-wrap: break-word;
+    font-size: 36px;
 }
 
 
@@ -80,32 +76,32 @@ body {
 
 .input-panel {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    /* Элементы расположены в строку */
     width: 100%;
     padding: 10px;
-    /* Минимальный отступ */
     background-color: #ff4d4d;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
     /* Фиксируем область внизу экрана */
     bottom: 0;
     left: 0;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 
 /* Поле ввода */
 
 input[type="text"] {
+    flex: 1;
+    /* Поле ввода растягивается по ширине */
     padding: 15px;
     font-size: 36px;
-    /* Снизим размер шрифта для лучшего размещения */
-    margin-bottom: 10px;
+    margin-right: 10px;
+    /* Отступ между полем ввода и кнопкой */
     border: 2px solid #b30000;
     border-radius: 12px;
     outline: none;
-    width: calc(100% - 30px);
-    /* Уменьшим отступы */
     box-sizing: border-box;
 }
 
@@ -113,16 +109,14 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: greenyellow;
+    background-color: green;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 15px;
     font-size: 36px;
-    margin: 5px 0;
     border-radius: 12px;
-    width: 100%;
 }
 
 button:hover {
