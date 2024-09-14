@@ -1,5 +1,3 @@
-/* Основные стили для всего документа */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffcccc;
@@ -10,43 +8,33 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* Удалите height: 100vh; чтобы избежать ограничения высоты страницы */
+    height: 100vh;
+    /* Устанавливаем высоту страницы */
 }
-
-
-/* Контейнер мессенджера */
 
 .messenger {
     background-color: #ff4d4d;
     width: 100%;
-    min-height: 100vh;
-    /* Используем min-height для динамического изменения высоты */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* Сообщения добавляются снизу */
+    justify-content: flex-end;
+    /* Панель ввода закреплена внизу */
     position: relative;
-    overflow-y: auto;
-    /* Разрешаем вертикальную прокрутку главного контейнера */
+    overflow: hidden;
+    /* Скрываем все, что выходит за границы контейнера */
 }
 
-
-/* Стили для области сообщений */
-
 #messages {
+    flex-grow: 1;
     padding: 30px;
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    /* Изменено на flex-start для корректного добавления сообщений */
     font-size: 48px;
     overflow-y: auto;
-    /* Разрешаем прокрутку в области сообщений */
+    /* Прокрутка только для сообщений */
 }
-
-
-/* Сообщения в чате */
 
 #messages div {
     background-color: blue;
@@ -60,17 +48,11 @@ body {
     overflow-wrap: break-word;
 }
 
-
-/* Стили для ваших сообщений */
-
 #messages div.your-message {
     background-color: #cc0000;
     align-self: flex-end;
     overflow-wrap: break-word;
 }
-
-
-/* Фиксированная панель ввода внизу экрана */
 
 .input-panel {
     display: flex;
@@ -79,10 +61,10 @@ body {
     padding: 20px;
     background-color: #ff4d4d;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    /* Закрепление панели внизу */
+    bottom: 0;
 }
-
-
-/* Поле ввода */
 
 input[type="text"] {
     padding: 30px;
@@ -95,11 +77,8 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-
-/* Стили кнопок */
-
 button {
-    background-color: blue;
+    background-color: green;
     color: #fff;
     border: none;
     cursor: pointer;
