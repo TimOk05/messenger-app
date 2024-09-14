@@ -35,14 +35,14 @@ body {
 
 #messages {
     padding: 30px;
+    padding-bottom: 100px;
+    /* Добавьте отступ снизу, чтобы не перекрывать фиксированную панель */
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Изменено на flex-start для корректного добавления сообщений */
     font-size: 48px;
     overflow-y: auto;
-    /* Разрешаем прокрутку в области сообщений */
 }
 
 
@@ -79,6 +79,13 @@ body {
     padding: 20px;
     background-color: #ff4d4d;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    /* Установите фиксированное положение */
+    bottom: 0;
+    /* Зафиксируйте область у нижней части экрана */
+    left: 0;
+    z-index: 10;
+    /* Установите порядок наложения выше других элементов */
 }
 
 
@@ -99,7 +106,7 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: green;
+    background-color: blueviolet;
     color: #fff;
     border: none;
     cursor: pointer;
