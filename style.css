@@ -26,8 +26,8 @@ body {
     justify-content: flex-start;
     position: relative;
     overflow-y: hidden;
-    padding-bottom: 180px;
-    /* Отступ снизу для области ввода, чтобы было достаточно места для всех элементов */
+    padding-bottom: 160px;
+    /* Увеличим отступ снизу для достаточного места для области ввода */
 }
 
 
@@ -75,13 +75,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
+    padding: 15px 20px;
+    /* Оставим достаточно отступов для элементов */
     background-color: #ff4d4d;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
-    /* Фиксируем область внизу экрана */
     bottom: 0;
-    /* Зафиксируем в нижней части */
     left: 0;
     z-index: 10;
 }
@@ -90,10 +89,10 @@ body {
 /* Поле ввода */
 
 input[type="text"] {
-    padding: 30px;
+    padding: 15px;
     font-size: 42px;
     margin-bottom: 15px;
-    /* Оставляем немного отступа между полем ввода и кнопками */
+    /* Оставим немного отступа между полем ввода и кнопками */
     border: 2px solid #b30000;
     border-radius: 12px;
     outline: none;
@@ -106,14 +105,16 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: green;
+    background-color: red;
+    /* Вернем правильный цвет для кнопок */
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 25px;
-    /* Вернем более удобные размеры для кнопок */
-    font-size: 42px;
+    padding: 20px;
+    /* Вернем удобные размеры для кнопок */
+    font-size: 36px;
+    /* Немного уменьшен размер шрифта для лучшего размещения */
     margin: 5px 0;
     /* Меньший отступ для нескольких кнопок */
     border-radius: 12px;
