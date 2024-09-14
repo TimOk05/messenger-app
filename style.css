@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffcccc;
+    background-color: white;
     color: #333;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 .messenger {
-    background-color: #ff4d4d;
+    background-color: white;
     width: 100%;
     height: 100%;
     display: flex;
@@ -24,34 +24,32 @@ body {
 
 #messages {
     flex-grow: 1;
-    padding: 30px;
-    background-color: #f2f2f2;
+    padding: 40px;
+    background-color: #201c3e;
     display: flex;
     flex-direction: column;
-    font-size: 48px;
+    font-size: 42px;
     overflow-y: auto;
 }
 
 #messages div {
-    background-color: blue;
-    color: #fff;
-    padding: 24px;
-    border-radius: 20px;
+    background-color: #635185;
+    color: #ffe8e1;
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
     max-width: 80%;
     align-self: flex-start;
-    font-size: 48px;
+    font-size: 42px;
     overflow-wrap: break-word;
     white-space: pre-wrap;
-    /* Обеспечивает перенос длинного текста на новую строку */
 }
 
 #messages div.your-message {
-    background-color: #cc0000;
+    background-color: white;
     align-self: flex-end;
     overflow-wrap: break-word;
     white-space: pre-wrap;
-    /* Обеспечивает перенос длинного текста на новую строку */
 }
 
 .input-panel {
@@ -59,7 +57,7 @@ body {
     flex-direction: column;
     width: 100%;
     padding: 20px;
-    background-color: #ff4d4d;
+    background-color: #793341;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: sticky;
     bottom: 0;
@@ -74,27 +72,46 @@ input[type="text"] {
     outline: none;
     width: calc(100% - 50px);
     box-sizing: border-box;
+    background-color: #e2a656;
+    /* Установим цвет фона */
+    color: #201c3e;
+    /* Цвет текста */
+}
+
+
+/* Изменение цвета плейсхолдера */
+
+input[type="text"]::placeholder {
+    color: #201c3e;
+    /* Цвет временного текста */
+    opacity: 1;
+    /* Убедимся, что цвет отображается полностью */
 }
 
 button {
-    background-color: rgb(66, 74, 66);
-    color: #fff;
+    background-color: #dc6d45;
+    color: #ffe8e1;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 30px;
+    padding: 20px 30px;
+    /* Минимальный размер кнопок */
     font-size: 42px;
-    margin: 10px 0;
+    margin: 10px auto;
+    /* Центрируем кнопки */
     border-radius: 12px;
-    width: 100%;
+    width: 80%;
+    /* Кнопки занимают только столько места, сколько нужно для текста */
+    max-width: calc(100% - 40px);
+    /* Ограничиваем максимальную ширину кнопок */
 }
 
 button:hover {
-    background-color: #cc0000;
+    background-color: #ff4d4d;
 }
 
 #clearButton {
-    background-color: #ff1a1a;
+    background-color: #a14e41;
 }
 
 #clearButton:hover {
