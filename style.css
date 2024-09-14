@@ -51,7 +51,8 @@ body {
 /* Сообщения в чате */
 
 #messages div {
-    background-color: blue;
+    background-color: red;
+    /* Яркий агрессивный цвет */
     color: #fff;
     padding: 15px;
     border-radius: 20px;
@@ -66,7 +67,8 @@ body {
 /* Стили для ваших сообщений */
 
 #messages div.your-message {
-    background-color: #cc0000;
+    background-color: #b30000;
+    /* Бордовый цвет */
     align-self: flex-end;
     overflow-wrap: break-word;
 }
@@ -96,7 +98,8 @@ input[type="text"] {
     flex: 1;
     /* Поле ввода растягивается по ширине */
     padding: 15px;
-    font-size: 36px;
+    font-size: 24px;
+    /* Оптимальный размер шрифта */
     margin-right: 10px;
     /* Отступ между полем ввода и кнопкой */
     border: 2px solid #b30000;
@@ -109,14 +112,16 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: green;
+    background-color: #b30000;
+    /* Бордовый цвет */
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 15px;
-    font-size: 36px;
+    font-size: 24px;
     border-radius: 12px;
+    width: 100%;
 }
 
 button:hover {
