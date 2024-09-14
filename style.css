@@ -10,7 +10,10 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* Удалите height: 100vh; чтобы избежать ограничения высоты страницы */
+    min-height: 100vh;
+    /* Удалите ограничение высоты */
+    overflow: hidden;
+    /* Убираем прокрутку для body */
 }
 
 
@@ -26,8 +29,10 @@ body {
     justify-content: flex-start;
     /* Сообщения добавляются снизу */
     position: relative;
-    overflow-y: auto;
-    /* Разрешаем вертикальную прокрутку главного контейнера */
+    overflow-y: hidden;
+    /* Скрываем прокрутку для главного контейнера */
+    padding-bottom: 100px;
+    /* Отступ снизу для области ввода */
 }
 
 
@@ -35,14 +40,16 @@ body {
 
 #messages {
     padding: 30px;
-    padding-bottom: 100px;
-    /* Добавьте отступ снизу, чтобы не перекрывать фиксированную панель */
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    /* Сообщения добавляются сверху */
     font-size: 48px;
     overflow-y: auto;
+    /* Разрешаем вертикальную прокрутку для сообщений */
+    flex: 1;
+    /* Позволяет области сообщений растягиваться */
 }
 
 
@@ -80,12 +87,12 @@ body {
     background-color: #ff4d4d;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
-    /* Установите фиксированное положение */
+    /* Фиксируем область внизу экрана */
     bottom: 0;
-    /* Зафиксируйте область у нижней части экрана */
+    /* Зафиксируем в нижней части */
     left: 0;
     z-index: 10;
-    /* Установите порядок наложения выше других элементов */
+    /* Поднимаем на передний план */
 }
 
 
@@ -94,11 +101,12 @@ body {
 input[type="text"] {
     padding: 30px;
     font-size: 42px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    /* Уменьшенный отступ */
     border: 2px solid #b30000;
     border-radius: 12px;
     outline: none;
-    width: calc(100% - 50px);
+    width: calc(100% - 20px);
     box-sizing: border-box;
 }
 
@@ -106,12 +114,12 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: blueviolet;
+    background-color: blue;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 30px;
+    padding: 20px;
     font-size: 42px;
     margin: 10px 0;
     border-radius: 12px;
