@@ -66,7 +66,7 @@ function displayMessage(message) {
     adjustMessageHeight(messageElement);
 
     // Прокрутка к последнему сообщению
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    scrollToBottom();
 }
 
 // Функция для динамической установки высоты сообщений
@@ -84,4 +84,10 @@ function adjustMessageHeight(messageElement) {
     } else {
         messageElement.style.height = 'auto'; // Устанавливаем автоматическую высоту для коротких сообщений
     }
+}
+
+// Функция для прокрутки до последнего сообщения
+function scrollToBottom() {
+    const messengerContainer = document.querySelector('.messenger'); // Обращение к главному контейнеру
+    messengerContainer.scrollTop = messengerContainer.scrollHeight; // Прокрутка до самого низа
 }
