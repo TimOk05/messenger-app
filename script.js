@@ -60,13 +60,28 @@ messagesRef.on('child_added', (data) => {
 function displayMessage(message) {
     const messageElement = document.createElement('div');
     messageElement.textContent = message.text;
-    messagesDiv.appendChild(messageElement); // Добавляем новое сообщение в конец
+    messagesDiv.appendChild(messageElement);
+
+    // Установка высоты сообщения
+    adjustMessageHeight(messageElement);
 
     // Прокрутка к последнему сообщению
-    scrollToBottom();
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-// Функция для прокрутки до последнего сообщения
-function scrollToBottom() {
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Прокрутка до самого низа
+// Функция для динамической установки высоты сообщений
+function adjustMessageHeight(messageElement) {
+    // Сброс высоты перед расчетом
+    messageElement.style.height = 'auto';
+    messageElement.style.overflow = 'hidden';
+
+    // Получаем расчетную высоту элемента
+    const computedHeight = messageElement.scrollHeight;
+
+    // Устанавливаем высоту в зависимости от содержимого
+    if (computedHeight > 100) { // Замените 100 на необходимую высоту в пикселях
+        messageElement.style.height = `${computedHeight}px`;
+    } else {
+        messageElement.style.height = 'auto'; // Устанавливаем автоматическую высоту для коротких сообщений
+    }
 }
