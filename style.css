@@ -11,9 +11,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    /* Высота для всего экрана */
+    /* Высота на весь экран */
     overflow: hidden;
-    /* Убираем прокрутку для body */
 }
 
 
@@ -25,29 +24,30 @@ body {
     height: 100vh;
     /* Высота на весь экран */
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    /* Изменяем направление flex, чтобы новые сообщения были снизу */
     justify-content: flex-start;
-    /* Сообщения добавляются снизу */
     position: relative;
     overflow: hidden;
-    /* Скрываем прокрутку */
 }
 
 
 /* Стили для области сообщений */
 
 #messages {
-    padding: 15px;
+    padding: 10px 15px;
+    /* Немного уменьшим отступы */
     background-color: #f2f2f2;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    /* Изменяем направление flex для отображения новых сообщений снизу */
     justify-content: flex-start;
     font-size: 48px;
     overflow-y: auto;
-    flex: 1;
-    /* Растягиваем область сообщений */
-    margin-bottom: 80px;
-    /* Добавляем отступ внизу для панели ввода */
+    flex-grow: 1;
+    /* Позволяет области сообщений растягиваться */
+    margin-top: 100px;
+    /* Отступ для панели ввода */
 }
 
 
@@ -56,12 +56,13 @@ body {
 #messages div {
     background-color: blue;
     color: #fff;
-    padding: 24px;
+    padding: 15px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     max-width: 80%;
     align-self: flex-start;
-    font-size: 48px;
+    font-size: 36px;
+    /* Снизим размер шрифта для лучшего размещения */
     overflow-wrap: break-word;
 }
 
@@ -81,8 +82,8 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 10px 20px;
-    /* Минимальный отступ для элементов */
+    padding: 10px;
+    /* Минимальный отступ */
     background-color: #ff4d4d;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
@@ -97,14 +98,14 @@ body {
 
 input[type="text"] {
     padding: 15px;
-    font-size: 42px;
+    font-size: 36px;
+    /* Снизим размер шрифта для лучшего размещения */
     margin-bottom: 10px;
-    /* Небольшой отступ */
     border: 2px solid #b30000;
     border-radius: 12px;
     outline: none;
-    width: calc(100% - 40px);
-    /* Уменьшаем отступы */
+    width: calc(100% - 30px);
+    /* Уменьшим отступы */
     box-sizing: border-box;
 }
 
@@ -112,18 +113,14 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: rgb(102, 0, 128);
-    /* Вернем правильный цвет для кнопок */
+    background-color: greenyellow;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 15px;
-    /* Уменьшаем padding для кнопок */
     font-size: 36px;
-    /* Немного уменьшен размер шрифта */
     margin: 5px 0;
-    /* Меньший отступ для кнопок */
     border-radius: 12px;
     width: 100%;
 }
