@@ -62,29 +62,11 @@ function displayMessage(message) {
     messageElement.textContent = message.text;
     messagesDiv.appendChild(messageElement);
 
-    // Установка высоты сообщения
-    adjustMessageHeight(messageElement);
-
     // Прокрутка к последнему сообщению
     scrollToBottom();
 }
 
-// Функция для динамической установки высоты сообщений
-function adjustMessageHeight(messageElement) {
-    // Сброс высоты перед расчетом
-    messageElement.style.height = 'auto';
-    messageElement.style.overflow = 'hidden';
-
-    // Получаем расчетную высоту элемента
-    const computedHeight = messageElement.scrollHeight;
-
-    // Устанавливаем высоту в зависимости от содержимого
-    if (computedHeight > 100) { // Замените 100 на необходимую высоту в пикселях
-        messageElement.style.height = `${computedHeight}px`;
-    } else {
-        messageElement.style.height = 'auto'; // Устанавливаем автоматическую высоту для коротких сообщений
-    }
-}
+// Удалите любые лишние функции, изменяющие стили элементов
 
 // Функция для прокрутки до последнего сообщения
 function scrollToBottom() {
