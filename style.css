@@ -11,9 +11,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    /* Удалите ограничение высоты */
     overflow: hidden;
-    /* Убираем прокрутку для body */
 }
 
 
@@ -23,16 +21,13 @@ body {
     background-color: #ff4d4d;
     width: 100%;
     min-height: 100vh;
-    /* Используем min-height для динамического изменения высоты */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Сообщения добавляются снизу */
     position: relative;
     overflow-y: hidden;
-    /* Скрываем прокрутку для главного контейнера */
-    padding-bottom: 100px;
-    /* Отступ снизу для области ввода */
+    padding-bottom: 180px;
+    /* Отступ снизу для области ввода, чтобы было достаточно места для всех элементов */
 }
 
 
@@ -44,12 +39,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Сообщения добавляются сверху */
     font-size: 48px;
     overflow-y: auto;
-    /* Разрешаем вертикальную прокрутку для сообщений */
     flex: 1;
-    /* Позволяет области сообщений растягиваться */
 }
 
 
@@ -92,7 +84,6 @@ body {
     /* Зафиксируем в нижней части */
     left: 0;
     z-index: 10;
-    /* Поднимаем на передний план */
 }
 
 
@@ -101,12 +92,13 @@ body {
 input[type="text"] {
     padding: 30px;
     font-size: 42px;
-    margin-bottom: 10px;
-    /* Уменьшенный отступ */
+    margin-bottom: 15px;
+    /* Оставляем немного отступа между полем ввода и кнопками */
     border: 2px solid #b30000;
     border-radius: 12px;
     outline: none;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
+    /* Уменьшаем отступы, чтобы было больше места */
     box-sizing: border-box;
 }
 
@@ -114,14 +106,16 @@ input[type="text"] {
 /* Стили кнопок */
 
 button {
-    background-color: blue;
+    background-color: green;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    padding: 20px;
+    padding: 25px;
+    /* Вернем более удобные размеры для кнопок */
     font-size: 42px;
-    margin: 10px 0;
+    margin: 5px 0;
+    /* Меньший отступ для нескольких кнопок */
     border-radius: 12px;
     width: 100%;
 }
